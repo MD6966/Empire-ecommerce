@@ -12,9 +12,10 @@ import MonetizationOnIcon from '@mui/icons-material/MonetizationOn';
 import TimelineIcon from '@mui/icons-material/Timeline';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+import ProductListing from './ProductListing'
 const useStyles = makeStyles((theme) => ({
     root:{
-      minHeight:'120vh',
+      minHeight:'90vh',
       background:'#e2e2e2',
     }
 }))
@@ -29,14 +30,13 @@ const StyledBox = styled(Box)(({theme})=> ({
   justifyContent:'space-between'
 }))
 const StyledBox2 = styled(Box)(({theme})=> ({
-  height:'70vh',
+  minHeight:'70vh',
   padding:theme.spacing(5),
-  paddingLeft: theme.spacing(10),
-  paddingRight: theme.spacing(10),
   background:'#ffff',
-  display:'flex',
-  alignItems:'center',
-  justifyContent:'space-between'
+  // display:'flex',
+  // alignItems:'center',
+  // justifyContent:'space-between',
+  background:'#e2e2e2'
 }))
 const Landing = () => {
     const classes = useStyles()
@@ -95,9 +95,7 @@ const Landing = () => {
           }
         </StyledBox>
         <StyledBox2>
-          <Typography variant="h3">
-            Another content
-          </Typography>
+          <ProductListing />
         </StyledBox2>
         <Footer /> 
     </Page>

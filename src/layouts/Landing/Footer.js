@@ -1,15 +1,31 @@
-import { Avatar, Box, Divider, Stack, Typography, styled } from '@mui/material'
+import { Avatar, Box, Divider, Stack, Typography, styled, Tooltip } from '@mui/material'
 import React from 'react'
 import { Link } from 'react-router-dom'
+import InstagramIcon from '@mui/icons-material/Instagram';
+import FacebookIcon from '@mui/icons-material/Facebook';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import TwitterIcon from '@mui/icons-material/Twitter';
+
 
 const StyledFooter = styled(Box)(({theme})=> ({
     minHeight:'30vh',
     background: theme.palette.primary.main,
     padding: theme.spacing(5),
     paddingLeft:theme.spacing(15),
-    paddingRight:theme.spacing(15),
-   
-    
+    paddingRight:theme.spacing(15), 
+}))
+const StyledAvatar = styled(Avatar)(({theme})=> ({
+  background:'#272727',
+  height:'50px',
+  width:'50px',
+  transition: 'transform 0.8s ease',
+  '&:hover': {
+    transform: 'rotate(360deg)',
+    background:theme.palette.secondary.main,
+    color:'#000'
+
+  },
+
 }))
 const Footer = () => {
   
@@ -106,6 +122,34 @@ const Footer = () => {
          </Typography>
          <Typography sx={{ml:1, color:'#2dc799'}}> Terms and Conditions </Typography>
 
+        </Box>
+        <Box sx={{color:"#fff", display:'flex', justifyContent:'center', mt:4}}>
+          <Stack spacing={3} direction="row">
+                  <Tooltip title="Instagram" sx={{cursor:'pointer'}}>
+          <StyledAvatar>
+            <InstagramIcon sx={{ fontSize: '2rem' }} />
+          </StyledAvatar>
+        </Tooltip>
+
+        <Tooltip title="Facebook" sx={{cursor:'pointer'}}>
+          <StyledAvatar>
+            <FacebookIcon sx={{ fontSize: '2rem' }} />
+          </StyledAvatar>
+        </Tooltip>
+
+        <Tooltip title="Twitter" sx={{cursor:'pointer'}}>
+          <StyledAvatar>
+            <TwitterIcon sx={{ fontSize: '2rem' }} />
+          </StyledAvatar>
+        </Tooltip>
+
+        <Tooltip title="LinkedIn" sx={{cursor:'pointer'}}>
+          <StyledAvatar>
+            <LinkedInIcon sx={{ fontSize: '2rem' }} />
+          </StyledAvatar>
+        </Tooltip>
+
+          </Stack>
         </Box>
     </StyledFooter>
   )
